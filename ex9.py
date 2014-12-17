@@ -5,10 +5,10 @@ theurl = 'http://www.pythonchallenge.com/pc/return/good.html'
 usr = 'huge'
 pwd = 'file'
 
-passman = urllib2.HTTPPasswordMgrWithDefaultRealm()						#this block enables authentication for urlopen method
+passman = urllib2.HTTPPasswordMgrWithDefaultRealm()						# this block enables authentication for urlopen method
 passman.add_password(None, theurl, usr, pwd)
 authhandler = urllib2.HTTPBasicAuthHandler(passman)
-opener = urllib2.build_opener(authhandler)
+opener = urllib2.build_opener(authhandler)								# creates an opener objects that manages authentication at any use of urllib2
 urllib2.install_opener(opener)
 
 text = urllib2.urlopen(theurl).read()
